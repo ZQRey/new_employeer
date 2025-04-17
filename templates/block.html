@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="ru">
+<head><meta charset="UTF-8"><title>Блокировка</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"></head>
+<body>
+<div class="container">
+  <h1>Блокировка пользователя</h1>
+  <form method="post">
+    <label>Логин</label><input name="login">
+    <label>Имя</label><input name="first_name">
+    <label>Фамилия</label><input name="last_name">
+    <button class="btn">Заблокировать</button>
+  </form>
+  <a href="/">←Назад</a>
+</div>
+</body></html>

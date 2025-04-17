@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="ru">
+<head><meta charset="UTF-8"><title>Результат</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"></head>
+<body>
+<div class="container">
+  <h1>Результат операции</h1>
+  <p>{{ message }}</p>
+  {% if user %}
+  <h2>Пользователь</h2>
+  <ul class="result-list">
+    <li>ФИО: {{ user.full_name }}</li>
+    <li>ИИН: {{ user.iin }}</li>
+    <li>Специальность: {{ user.specialty }}</li>
+    <li>Отделение: {{ user.department_dn }}</li>
+    <li>Телефон: {{ user.phone }}</li>
+    <li>Email: {{ user.email }}</li>
+    <li>Логин: {{ user.login }}</li>
+    <li>Пароль: {{ user.password }}</li>
+  </ul>
+  {% endif %}
+  {% if file_links %}
+    <h2>Excel документы</h2>
+    <ul class="result-list">
+    {% for link in file_links %}
+      <li><a href="{{ url_for('static',filename=link) }}">{{ link.split('/')[-1].split('.')[0] }}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  <h2>DOCX образец</h2>
+  <ul class="result-list">
+    <li><a href="{{ url_for('download_doc',filename='obaz_eisz.docx') }}">obaz_eisz</a></li>
+  </ul>
+  <a href="/">←Назад</a>
+</div>
+</body></html>

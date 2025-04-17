@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="ru">
+<head><meta charset="UTF-8"><title>Сброс пароля</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"></head>
+<body>
+<div class="container">
+  <h1>Сброс пароля</h1>
+  <form method="post">
+    <label>Имя</label><input name="first_name" required>
+    <label>Фамилия</label><input name="last_name" required>
+    <button class="btn">Сбросить</button>
+  </form>
+  <a href="/">←Назад</a>
+</div>
+</body></html>
