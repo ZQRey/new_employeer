@@ -35,9 +35,9 @@ def generate_obaz_excel(data):
     return out.split("static/")[1]
 
 def copy_obaz_docx(data):
-    src = "templates/templates_doc/obaz_eisz.docx"
+    src = "templates/templates_doc/obaz_kmis.docx"
     suf = f"{data['last_name']}_{data['first_name']}".replace(" ","_")
-    out = f"static/Doc/OBAZ_DOC/obaz_eisz_{suf}.docx"
+    out = f"static/Doc/OBAZ_DOC/obaz_kmis_{suf}.docx"
     os.makedirs(os.path.dirname(out), exist_ok=True)
     shutil.copy(src, out)
     return out.split("static/")[1]

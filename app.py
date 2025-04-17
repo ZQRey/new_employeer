@@ -4,6 +4,15 @@ from flask import Flask, render_template, request, send_from_directory
 from ad_utils import process_employee_data, create_ad_user, get_ad_departments
 from excel_utils import generate_excel_files, generate_obaz_excel, copy_obaz_docx
 
+"""
+    Обязательно:
+    В папку templates\templates_doc добавить документы:
+    ├── pril_eisz.xlsx - файл приложения для заполнения ЕИСЗ
+    ├── pril_kmis.xlsx - файл приложения КМИС
+    ├── obaz_eisz.xlsx - обязательство ЕИСЗ
+    └── obaz_kmis.docx - обязательство КМИС
+"""
+
 app = Flask(__name__)
 
 @app.route('/')
